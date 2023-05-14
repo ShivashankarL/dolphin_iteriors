@@ -1,0 +1,26 @@
+.landing_page {
+  height: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.landing_page > img {
+  margin: 25px;
+}
+.get-quote-btn {
+  color: antiquewhite;
+  background-color: #2d5ee3;
+  border: 2px solid skyblue;
+  padding: 10px 10px;
+  font-weight: bolder;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.get-quote-btn:hover {
+  background-color: skyblue;
+  border: 2px solid #2d5ee3;
+  color: #2d5ee3;
+}
