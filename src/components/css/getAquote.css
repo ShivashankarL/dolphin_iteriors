@@ -1,0 +1,51 @@
+.getAQuoteDiv {
+  height: 100%;
+  background-color: blueviolet;
+  overflow: hidden;
+}
+.heading_quote {
+  margin: 30px;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #000000;
+}
+.form-getquote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input_field {
+  border: 1px solid blue;
+  height: 50px;
+  font-family: "Poppins", sans-serif;
+  width: 80%;
+  padding: 10px 10px 10px 10px;
+}
+.error_field {
+  height: 30px;
+}
+.submit_quote {
+  border: 2px solid white;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  width: 100px;
+  padding: 10px 10px 10px 10px;
+}
+.submit_quote:hover {
+  border: 3px solid blue;
+  background: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  color: blue;
+  width: 100px;
+  padding: 10px 10px 10px 10px;
+}
+
+.error_field {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  font-size: 20px;
+  color: red;
+}
