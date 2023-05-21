@@ -6,7 +6,6 @@ import title1 from "../images/Dolphindream_Infra_Projects_LLP.svg";
 const LandingPage = () => {
   return (
     <>
-      <NavBar />
       <div className="landing_page">
         <img src={logo} alt=" not found" />
         <img src={title1} alt=" not found" />

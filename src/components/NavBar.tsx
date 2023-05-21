@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./css/NavBar.css";
-import Logo from "../images/navbar_logo.png";
+import Logo from "../images/logo.svg";
 const NavBar = () => {
   // const am = document.getElementsByClassName("menu-toggle")[0];
   const [class_name, setClassName] = useState({
