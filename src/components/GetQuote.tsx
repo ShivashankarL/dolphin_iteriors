@@ -1,7 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Formik, FormikProps } from "formik";
 import "./css/getAquote.css";
 import { GetAQuoteValidationSchema } from "../utils/validationSchemas/getQuote";
+import {
+  QuerySnapshot,
+  addDoc,
+  collection,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
+import { error, log } from "console";
+import { db } from "../firebase/firebaseconfig";
+
 interface ObjectTypes {
   [key: string]: string;
 }
@@ -12,6 +24,33 @@ interface getQuoteFormDataType extends ObjectTypes {
   client_requirement: string;
 }
 const GetQuote = () => {
+  const get_quote_collection = collection(db, "get_quote");
+  const [quote_exists, setquote_exists] = useState(false);
+  console.log(get_quote_collection);
+  const [formData, setFormData] = useState<getQuoteFormDataType>({
+    client_email: "",
+    client_name: "",
+    client_phone: "",
+    client_requirement: "",
+  });
+
+  useEffect(() => {
+    const query_quote_exists = query(
+      get_quote_collection,
+      where("client_email", "==", formData.client_email),
+      where("client_phone", "==", formData.client_phone)
+    );
+    getDocs(query_quote_exists)
+      .then((result) => {
+        if (!result) {
+          setquote_exists(true);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
+  console.log(quote_exists);
+
+  const [documents, setDocuments] = useState([]);
   const formJson = [
     {
       inputName: "client_email",
@@ -27,17 +66,13 @@ const GetQuote = () => {
       labelName: "Contact No",
     },
     {
-      inputName: "client_requirment",
+      inputName: "client_requirement",
       labelName: "Requirment",
       type: "text_area",
     },
   ];
-  const [formData, setFormData] = useState<getQuoteFormDataType>({
-    client_email: "",
-    client_name: "",
-    client_phone: "",
-    client_requirement: "",
-  });
+
+  useEffect(() => {});
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     meta: FormikProps<getQuoteFormDataType>
@@ -47,16 +82,34 @@ const GetQuote = () => {
       [e.target.name]: e.target.value,
     }));
   };
+
+  const addQuote = async () => {
+    try {
+      const response = await addDoc(get_quote_collection, {
+        ...formData,
+      });
+      if (response.id) {
+        alert(
+          "Your quote has been received. You will receive a call from our correspondent soon"
+        );
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <div className="getAQuoteDiv">
       <h1 className="heading_quote">Get Quote</h1>
       <Formik
         initialValues={formData}
-        onSubmit={() => {}}
+        onSubmit={addQuote}
         validationSchema={GetAQuoteValidationSchema}
+        validateOnChange
+        enableReinitialize
       >
         {(meta) => {
-          console.log(meta.values);
+          console.log(meta.errors);
 
           return (
             <Form className="form-getquote">
