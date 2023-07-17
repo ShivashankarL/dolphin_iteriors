@@ -1,3 +1,42 @@
+.gallery_intro {
+  background: skyblue;
+  height: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery_intro h1 {
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+  color: black;
+}
+.gallery_category {
+  background: whitesmoke;
+  width: 90%;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+.ima {
+  width: 300px;
+  margin: 10px 10px 10px 10px;
+  position: relative;
+}
+.ima img {
+  object-fit: contain;
+  width: 100%;
+  border-radius: 10px;
+}
+.cat_title {
+  position: absolute;
+  top: 60%;
+  bottom: 70%;
+  left: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+}
 .gallery {
   display: flex;
   padding: 2px;

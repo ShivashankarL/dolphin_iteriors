@@ -4,7 +4,14 @@ import NavBar from "./components/NavBar";
 import GetQuote from "./components/GetQuote";
 import Gallery from "./components/Gallery";
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import GalleryIntro from "./components/GalleryIntro";
 // import { getTokenFound } from "../src/firebase/firebaseconfig.js";
 
 function App() {
@@ -31,7 +38,15 @@ function App() {
   ]);
   return (
     <>
-      <RouterProvider router={routes} />
+      {/* <RouterProvider router={routes} /> */}
+      <Router>
+        <NavBar>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/gallery" element={<GalleryIntro />} />
+          </Routes>
+        </NavBar>
+      </Router>
       {/* <GetQuote />
       <Gallery /> */}
     </>
