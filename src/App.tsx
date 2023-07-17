@@ -7,7 +7,7 @@ import "./App.css";
 import {
   createBrowserRouter,
   RouterProvider,
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
@@ -18,35 +18,18 @@ function App() {
   // const [tokenFound, setTokenFound] = useState(false);
   // getTokenFound(setTokenFound);
   // console.log(tokenFound, "TokenFound");
-  const routes = createBrowserRouter([
-    {
-      path: "/",
-      element: (
-        <NavBar>
-          <LandingPage />
-        </NavBar>
-      ),
-    },
-    {
-      path: "/gallery",
-      element: (
-        <NavBar>
-          <Gallery />
-        </NavBar>
-      ),
-    },
-  ]);
+
   return (
     <>
       {/* <RouterProvider router={routes} /> */}
-      <Router>
-        <NavBar>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/gallery" element={<GalleryIntro />} />
-          </Routes>
-        </NavBar>
-      </Router>
+      {/* <Router> */}
+      <NavBar>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/gallery" element={<GalleryIntro />} />
+        </Routes>
+      </NavBar>
+      {/* </Router> */}
       {/* <GetQuote />
       <Gallery /> */}
     </>

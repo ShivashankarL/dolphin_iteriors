@@ -1,5 +1,6 @@
 import React from "react";
 import Kitchen from "../images/kitchen_cat.jpg";
+import "./css/gallery.scss";
 
 const GalleryIntro = () => {
   return (
