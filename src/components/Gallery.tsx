@@ -1,7 +1,6 @@
 import React from "react";
 import "./css/gallery.scss";
 import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
 
 const Gallery = () => {
   return (
