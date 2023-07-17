@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0d187375.css",
+    "main.js": "/static/js/main.02ff3c15.js",
+    "static/media/kitchen_cat.jpg": "/static/media/kitchen_cat.155de11665fbda99cf9f.jpg",
+    "static/media/Dolphindream_Infra_Projects_LLP.svg": "/static/media/Dolphindream_Infra_Projects_LLP.80b430616079a719256173594d0f39e0.svg",
+    "static/media/logo.svg": "/static/media/logo.6107ef38e5b310122c73842eeb4c0cb6.svg",
+    "index.html": "/index.html",
+    "main.0d187375.css.map": "/static/css/main.0d187375.css.map",
+    "main.02ff3c15.js.map": "/static/js/main.02ff3c15.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d187375.css",
+    "static/js/main.02ff3c15.js"
+  ]
+}
