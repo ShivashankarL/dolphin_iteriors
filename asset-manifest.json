@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/dolphin_iteriors/static/css/main.c52697fc.css",
-    "main.js": "/dolphin_iteriors/static/js/main.d19f5665.js",
-    "static/media/kitchen_cat.jpg": "/dolphin_iteriors/static/media/kitchen_cat.155de11665fbda99cf9f.jpg",
-    "static/media/Dolphindream_Infra_Projects_LLP.svg": "/dolphin_iteriors/static/media/Dolphindream_Infra_Projects_LLP.732b0772ac35b737d7ba21897b8bdde0.svg",
+    "main.css": "/dolphin_iteriors/static/css/main.5f1c6203.css",
+    "main.js": "/dolphin_iteriors/static/js/main.0859b339.js",
+    "static/media/landing-page.jpg": "/dolphin_iteriors/static/media/landing-page.1942a91ad83bd0182016.jpg",
+    "static/media/kitchen_cat.jpg": "/dolphin_iteriors/static/media/kitchen_cat.5b2bbf6aeb64cae91c6c.jpg",
+    "static/media/livingarea_cat.jpg": "/dolphin_iteriors/static/media/livingarea_cat.76df0013a11664802dcd.jpg",
     "static/media/logo.svg": "/dolphin_iteriors/static/media/logo.483c473ab4d3c39df4b03ff35baf5ccb.svg",
     "index.html": "/dolphin_iteriors/index.html",
-    "main.c52697fc.css.map": "/dolphin_iteriors/static/css/main.c52697fc.css.map",
-    "main.d19f5665.js.map": "/dolphin_iteriors/static/js/main.d19f5665.js.map"
+    "main.5f1c6203.css.map": "/dolphin_iteriors/static/css/main.5f1c6203.css.map",
+    "main.0859b339.js.map": "/dolphin_iteriors/static/js/main.0859b339.js.map"
   },
   "entrypoints": [
-    "static/css/main.c52697fc.css",
-    "static/js/main.d19f5665.js"
+    "static/css/main.5f1c6203.css",
+    "static/js/main.0859b339.js"
   ]
 }
