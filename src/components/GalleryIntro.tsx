@@ -1,5 +1,6 @@
 import React from "react";
 import Kitchen from "../images/kitchen_cat.jpg";
+import LivingArea from "../images/livingarea_cat.jpg";
 import "./css/gallery.scss";
 
 const GalleryIntro = () => {
@@ -11,9 +12,10 @@ const GalleryIntro = () => {
           <img src={Kitchen} alt="Image not Found" />
           <span className="cat_title">Kitchen</span>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div className="ima">
+          <img src={LivingArea} alt="Image not Found" />
+          <span className="cat_title">Living Area</span>
+        </div>
       </div>
     </div>
   );

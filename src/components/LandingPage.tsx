@@ -7,16 +7,28 @@ const LandingPage = () => {
   return (
     <>
       <div className="landing_page">
-        <img src={logo} alt=" not found" />
-        <img src={title1} alt=" not found" />
-        <button
-          onClick={() => {
-            alert("To be implemented");
-          }}
-          className="get-quote-btn"
-        >
-          Get a Quote!
-        </button>
+        <div className="landing_text">
+          <h1 className="head_title">We Build your dreams.</h1>
+
+          <p className="head-paragraph">
+            "Synchronized Perfection - Dolphin Interiors, Merging Impeccable
+            Precision with the Fluidity of Nature, Tailoring Your Space into a
+            Harmonious Masterpiece."
+          </p>
+          <p className="head-paragraph">
+            "To begin crafting your dream space, we invite you to 'Envision'
+            your ideal home with us. Book a meeting today!"
+          </p>
+
+          <button
+            onClick={() => {
+              alert("To be implemented");
+            }}
+            className="get-quote-btn"
+          >
+            Get a Quote!
+          </button>
+        </div>
       </div>
     </>
   );
