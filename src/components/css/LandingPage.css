@@ -1,34 +1,31 @@
 .landing_page {
-  height: calc(100% - 300px);
-  background-image: url("../../images/landing-page.jpg");
+  height: calc(100% - 60px);
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, #101426 100%),
+    url("../../images/landing.jpg"), lightgray 50% / cover no-repeat;
+  background-blend-mode: multiply, normal;
   background-size: cover;
   display: flex;
   flex-direction: row;
 }
 .landing_text {
-  margin-top: 50px;
-  position: relative;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   width: 50%;
   margin-left: 20px;
 
-  color: white;
   font-family: "Poppins", sans-serif;
 }
 .head_title {
-  /* position: absolute; */
-  /* left: 30px; */
   font-size: 50px;
-  /* margin-top: 20px; */
+  color: white;
 }
 .head-paragraph {
   font-size: 20px;
   margin-top: 30px;
   text-align: justify;
   font-weight: 300;
-  background-color: rgb(0, 0, 0, 0.5);
   color: white;
 }
 .landing_page:after {
@@ -38,7 +35,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  /* background: rgba(0, 0, 0, ); */
   pointer-events: none;
 }
 .landing_page > img {
@@ -61,4 +57,51 @@
   font-weight: bolder;
   width: 20%;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1390px) {
+  .landing_text {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .get-quote-btn {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .landing_text {
+    width: 70%;
+  }
+  .head_title {
+    font-size: 30px;
+  }
+  .head-paragraph {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .landing_text {
+    width: 70%;
+  }
+  .head_title {
+    font-size: 25px;
+  }
+  .head-paragraph {
+    font-size: 15px;
+  }
+  .get-quote-btn {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .landing_text {
+    width: 70%;
+  }
+  .head_title {
+    font-size: 20px;
+  }
+  .head-paragraph {
+    font-size: 10px;
+  }
 }

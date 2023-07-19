@@ -26,7 +26,7 @@ const LandingPage = () => {
             }}
             className="get-quote-btn"
           >
-            Get a Quote!
+            Book a Meeting!
           </button>
         </div>
       </div>

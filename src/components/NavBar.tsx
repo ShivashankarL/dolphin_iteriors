@@ -25,7 +25,11 @@ const NavBar: React.FC<Props> = ({ children }) => {
           }
     );
   };
+  console.log(class_name.icon);
+
   window.onscroll = () => {
+    console.log("Helo");
+
     setClassName({
       nav: "nav",
       icon: "menu-toggle",
@@ -42,7 +46,7 @@ const NavBar: React.FC<Props> = ({ children }) => {
               Dolphin<span className="sublogo_title">Interiors</span>
             </div>
             <div
-              className={class_name.icon}
+              className={"menu-toggle"}
               id="mobile-menu"
               onClick={toggleClassName}
             >
