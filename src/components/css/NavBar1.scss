@@ -1,0 +1,93 @@
+.navbar {
+  width: 100%;
+  height: auto;
+  &-nav-wrapper {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    nav {
+      display: grid;
+      grid-template-columns: 0.3fr 2fr 3fr;
+      align-items: start;
+      height: 50px;
+      overflow: hidden;
+      .menu-toggle {
+        justify-self: end;
+        margin-right: 25px;
+        display: none;
+      }
+      .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #3f3f3f;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+      }
+      .menu-toggle:hover {
+        cursor: pointer;
+      }
+
+      #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      #mobile-menu.is-active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        -ms-transform: translateY(8px) rotate(45deg);
+        -o-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      #mobile-menu.is-active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        -ms-transform: translateY(-8px) rotate(-45deg);
+        -o-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+      }
+      img {
+        height: 40px;
+        width: auto;
+        justify-self: start;
+        margin-left: 20px;
+      }
+      .logo-title {
+        color: #000;
+        font-size: 1.5rem;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+      }
+      ul {
+        list-style: none;
+        display: grid;
+        color: #3498db;
+        grid-template-columns: repeat(6, 1fr);
+        justify-self: end;
+        font-family: "Lato", "Arial", sans-serif;
+        .nav-item {
+          color: #000;
+          font-size: 0.9rem;
+          font-weight: 400;
+          text-decoration: none;
+          transition: color 0.3s ease-out;
+        }
+        .nav-item {
+          a {
+            text-decoration: none;
+            color: #000;
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-decoration: none;
+            transition: color 0.3s ease-out;
+          }
+          a:hover {
+            color: #3498db;
+          }
+        }
+      }
+    }
+  }
+}

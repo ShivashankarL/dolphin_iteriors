@@ -91,7 +91,7 @@
     font-size: 15px;
   }
   .get-quote-btn {
-    font-size: 10px;
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -102,6 +102,6 @@
     font-size: 20px;
   }
   .head-paragraph {
-    font-size: 10px;
+    font-size: 15px;
   }
 }

@@ -19,7 +19,6 @@
 .ima {
   width: 300px;
   margin: 10px 10px 10px 10px;
-  position: relative;
 }
 .ima img {
   object-fit: contain;
@@ -30,10 +29,6 @@
   cursor: pointer;
 }
 .cat_title {
-  position: absolute;
-  top: 80%;
-  // bottom: 70%;
-  left: 10%;
   font-size: 20px;
   font-weight: bold;
   color: black;
@@ -107,7 +102,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: sticky;
 }
 // .MuiPagination-text {
 //   height: 80px;
