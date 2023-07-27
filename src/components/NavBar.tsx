@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import "./css/NavBar1.scss";
 import Logo from "../images/logo.svg";
 import { Link } from "react-router-dom";
+import Home from "../images/nav-icons/Home.svg";
+import Gallery from "../images/nav-icons/Gallery.svg";
+import ContactUs from "../images/nav-icons/ContactUs.svg";
 interface Props {
   children: React.ReactNode;
+}
+enum NavTypes {
+  HOME = "HOME",
+  GALLERY = "GALLERY",
 }
 const NavBar: React.FC<Props> = ({ children }) => {
   // const am = document.getElementsByClassName("menu-toggle")[0];
@@ -11,7 +18,7 @@ const NavBar: React.FC<Props> = ({ children }) => {
     nav: "nav",
     icon: "menu-toggle",
   });
-
+  const [navActive, setNavActive] = useState<NavTypes>(NavTypes.HOME);
   const toggleClassName = () => {
     setClassName(
       class_name.nav === "nav"
@@ -39,11 +46,9 @@ const NavBar: React.FC<Props> = ({ children }) => {
         <div className="navbar-nav-wrapper">
           <nav className="navbar-nav">
             <img src={Logo} alt="Company Logo" className="navbar-logo-img" />
-            <div className="logo-title">
-              Dolphin<span className="navbar-subtitle">Interiors</span>
-            </div>
+            <div className="logo-title">Dolphin Dream Infra Projects</div>
             <div
-              className={"menu-toggle"}
+              className="menu-toggle"
               id="mobile-menu"
               onClick={toggleClassName}
             >
@@ -53,12 +58,17 @@ const NavBar: React.FC<Props> = ({ children }) => {
             </div>
             <ul className={`${class_name.nav} no-search`}>
               <li className="nav-item">
+                <span className="material-symbols-outlined">home</span>
                 <Link to="/">Home</Link>
               </li>
               <li className="nav-item">
+                <span className="material-symbols-outlined">
+                  gallery_thumbnail
+                </span>
                 <Link to="/gallery">Gallery</Link>
               </li>
               <li className="nav-item">
+                <span className="material-symbols-outlined">contacts</span>
                 <a href="#">Contact Us</a>
               </li>
             </ul>
