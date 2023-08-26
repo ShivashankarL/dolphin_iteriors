@@ -18,7 +18,6 @@ const NavBar: React.FC<Props> = ({ children }) => {
     nav: "nav",
     icon: "menu-toggle",
   });
-  const [navActive, setNavActive] = useState<NavTypes>(NavTypes.HOME);
   const toggleClassName = () => {
     setClassName(
       class_name.nav === "nav"
