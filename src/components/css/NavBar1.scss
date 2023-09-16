@@ -1,18 +1,28 @@
 .navbar {
   width: 100%;
-  z-index: 2;
   &-nav-wrapper {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     width: 100%;
     top: 0;
     background-color: #fff;
+    z-index: 2;
     nav {
       display: grid;
-      grid-template-columns: 0.3fr 4fr 3fr;
+      @media only screen and (max-width: 600px) {
+        grid-template-columns: 4.3fr 3fr;
+        // display: none;
+      }
+      @media only screen and (min-width: 601px) {
+        grid-template-columns: 0.3fr 4fr 0.1fr;
+        // display: none;
+      }
+      @media only screen and (min-width: 721px) {
+        grid-template-columns: 0.3fr 4fr 6fr;
+        // display: none;
+      }
       align-items: center;
       height: 80px;
-      overflow: hidden;
       .menu-toggle {
         justify-self: end;
         margin-right: 25px;
@@ -63,14 +73,12 @@
       }
       .logo-title {
         color: #000;
-        // font-size: 1rem;
+        font-size: 1rem;
 
-        @media only screen and (max-width: 477px) {
-          font-size: 0.8rem;
+        @media only screen and (max-width: 648px) {
+          display: none;
         }
-        @media only screen and (max-width: 396px) {
-          font-size: 0.7rem;
-        }
+
         // @media screen and (min-width: 934px) {
         //   font-size: 1.5rem;
         // }
@@ -82,13 +90,15 @@
       }
       ul {
         list-style: none;
+
         @media screen and (max-width: 720px) {
+          margin-top: 35px;
           display: flex;
           flex-direction: column;
         }
         @media screen and (min-width: 721px) {
           display: grid;
-          grid-template-columns: 2fr 2fr 3fr 2fr 2fr;
+          grid-template-columns: 2fr 2fr 3fr 1fr;
           column-gap: 10px;
           justify-self: end;
         }
@@ -119,13 +129,10 @@
 
           padding: calc(var(--g) + var(--b));
           --_g: #0000 25%, var(--c) 0;
-          background: conic-gradient(
-                from 180deg at top var(--b) right var(--b),
-                var(--_g)
-              )
+          background: conic-gradient(from 180deg at top var(--b), var(--_g))
               var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
-            conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0
-              var(--_i, 200%) / var(--_i, var(--b)) 200% no-repeat;
+            conic-gradient(at bottom var(--b)) 0 var(--_i, 200%) /
+              var(--_i, var(--b)) 200% no-repeat;
           transition: 0.3s, background-position 0.3s 0.3s;
           cursor: pointer;
           &:hover {

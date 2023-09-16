@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import "./css/NavBar1.scss";
 import Logo from "../images/logo.svg";
 import { Link } from "react-router-dom";
-import Home from "../images/nav-icons/Home.svg";
-import Gallery from "../images/nav-icons/Gallery.svg";
-import ContactUs from "../images/nav-icons/ContactUs.svg";
 interface Props {
   children: React.ReactNode;
 }

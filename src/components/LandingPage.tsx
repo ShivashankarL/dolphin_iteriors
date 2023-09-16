@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import logo from "../images/logo.svg";
 import title1 from "../images/Dolphindream_Infra_Projects_LLP.svg";
 import Landing from "../images/landing.jpg";
+import ComingSoon from "./ComingSoon";
 const LandingPage = () => {
   return (
     <>
@@ -42,6 +43,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+      {/* <ComingSoon /> */}
     </>
   );
 };
