@@ -50,7 +50,12 @@
     @media only screen and (max-width: 550px) {
       font-size: 15px;
     }
-
+    @media only screen and (max-width: 456px) {
+      font-size: 13px;
+    }
+    @media only screen and (max-width: 400px) {
+      font-size: 12px;
+    }
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -76,6 +81,10 @@
     backdrop-filter: blur(16.133333206176758px);
     ul {
       margin-top: 3px;
+      @media only screen and (max-width: 456px) {
+        font-size: 13px;
+      }
+
       li {
         margin-top: 10px;
         text-overflow: ellipsis;
@@ -88,7 +97,12 @@
 
 .head_title {
   color: var(--gray-800, #1a202c);
-  font-size: 36px;
+  @media only screen and (max-width: 456px) {
+    font-size: 20px;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 20px;
+  }
   font-style: normal;
   font-family: "Poppins", sans-serif;
   font-weight: 800;
@@ -174,9 +188,6 @@
   .landing_text {
     width: 70%;
   }
-  .head_title {
-    font-size: 25px;
-  }
   .head-paragraph {
     font-size: 15px;
   }
@@ -184,9 +195,6 @@
 @media only screen and (max-width: 400px) {
   .landing_text {
     width: 70%;
-  }
-  .head_title {
-    font-size: 20px;
   }
   .head-paragraph {
     font-size: 15px;

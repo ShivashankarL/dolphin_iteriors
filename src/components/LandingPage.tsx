@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/LandingPage.scss";
 import NavBar from "./NavBar";
 import logo from "../images/logo.svg";
 import title1 from "../images/Dolphindream_Infra_Projects_LLP.svg";
 import Landing from "../images/landing.jpg";
 import ComingSoon from "./ComingSoon";
+import Modal from "react-modal";
+import BookMeeting from "./BookMeeting";
+import { BookModalStyle } from "./css/ModalStyles";
 const LandingPage = () => {
+  const [bookMeetingModal, setBookMeetingModal] = useState(false);
   return (
     <>
       <div className="landing_page">
@@ -31,7 +35,7 @@ const LandingPage = () => {
 
             <button
               onClick={() => {
-                alert("To be implemented");
+                setBookMeetingModal(!bookMeetingModal);
               }}
               className="get-quote-btn"
             >
@@ -44,6 +48,16 @@ const LandingPage = () => {
         </div>
       </div>
       {/* <ComingSoon /> */}
+
+      <Modal
+        shouldCloseOnOverlayClick={true}
+        isOpen={bookMeetingModal}
+        style={BookModalStyle}
+        ariaHideApp={false}
+        onRequestClose={() => setBookMeetingModal(!bookMeetingModal)}
+      >
+        <BookMeeting />
+      </Modal>
     </>
   );
 };
