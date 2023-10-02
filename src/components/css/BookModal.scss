@@ -22,19 +22,18 @@
     width: 90%;
     margin-top: 5px;
     padding: 10px 10px 10px 10px;
-    @media screen and (min-width: 900px) {
-      width: 50%;
-    }
   }
   #type_of_service {
-    width: 90%;
+    width: 100%;
     @media screen and (min-width: 900px) {
       width: 50%;
     }
     padding: 10px 10px 10px 10px;
   }
+  &-field_error {
+    color: #ff4d6a !important ;
+  }
   button {
-    margin: 30px;
     width: 30%;
   }
   &-buttons {
@@ -42,6 +41,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 10px;
+    column-gap: 10px;
   }
   label {
     width: 100%;
@@ -75,6 +76,8 @@
 }
 .ReactModal__Overlay {
   opacity: 0;
+  display: flex;
+  justify-content: center;
   transition: opacity 500ms ease-in-out;
 }
 
@@ -90,14 +93,14 @@
   align-self: center;
   position: static !important;
   padding: 0 !important;
-  width: 100%;
+  width: 50%;
   @media only screen and (min-width: 992px) {
     height: 80%;
     margin-top: 2%;
   }
-
   @media screen and (max-width: 600px) {
     margin-left: 0;
+    width: 100%;
   }
 }
 

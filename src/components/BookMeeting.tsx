@@ -22,10 +22,26 @@ interface getQuoteFormDataType extends ObjectTypes {
   client_phone: string;
   client_requirement: string;
 }
+
+const Options = [
+  "Interior Works",
+  "Exteriors",
+  "Constructions",
+  "Electricals",
+  "Plumbing",
+  "Fabrications",
+  "Painting",
+  "Flooring Works",
+  "Glass Works",
+  "Cladding Works & Upvc Works",
+  "Upvc Works",
+  "Aluminium Doors & Window Solutions",
+  "Poultry Farms & Hatchery",
+];
 const BookMeeting = () => {
   const get_quote_collection = collection(db, "get_quote");
   const [quote_exists, setquote_exists] = useState(false);
-  console.log(get_quote_collection);
+
   const [formData, setFormData] = useState<getQuoteFormDataType>({
     client_email: "",
     client_name: "",
@@ -47,13 +63,14 @@ const BookMeeting = () => {
       .catch((err) => console.log(err));
   }, []);
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
     meta: FormikProps<getQuoteFormDataType>
   ) => {
     setFormData((prevValues: getQuoteFormDataType) => ({
       ...prevValues,
       [e.target.name]: e.target.value,
     }));
+    meta.handleChange(e);
   };
   const addQuote = async () => {
     try {
@@ -69,7 +86,14 @@ const BookMeeting = () => {
       console.log(e);
     }
   };
-
+  const hanldeClear = () => {
+    setFormData({
+      client_email: "",
+      client_name: "",
+      client_phone: "",
+      client_requirement: "Interior Works",
+    });
+  };
   return (
     <>
       <div className="modal">
@@ -81,7 +105,6 @@ const BookMeeting = () => {
             initialValues={formData}
             onSubmit={addQuote}
             validationSchema={GetAQuoteValidationSchema}
-            validateOnChange
             enableReinitialize
           >
             {(meta) => {
@@ -91,71 +114,69 @@ const BookMeeting = () => {
                     Name
                     <input
                       type="text"
-                      name="name"
+                      name="client_name"
                       id="name"
                       required
-                      onChange={(e) => {
-                        setFormData((prevValues) => ({
-                          ...prevValues,
-                          client_name: e.target.value.trim(),
-                        }));
-                      }}
+                      onChange={(e) => handleChange(e, meta)}
                     />
                   </label>
-
+                  <span className="field_error">
+                    {meta.errors.client_name && meta.touched.client_name
+                      ? meta.errors.client_name
+                      : ""}
+                  </span>
                   <label>
                     Phone Number
                     <input
                       type="tel"
-                      name="phone"
+                      name="client_phone"
                       id="phone"
                       required
-                      onChange={(e) => {
-                        setFormData((prevValues) => ({
-                          ...prevValues,
-                          client_phone: e.target.value.trim(),
-                        }));
-                      }}
+                      onChange={(e) => handleChange(e, meta)}
                     />
                   </label>
-
+                  <span className="modal-form-field_error">
+                    {meta.errors.client_phone && meta.touched.client_phone
+                      ? meta.errors.client_phone
+                      : ""}
+                  </span>
                   <label>
                     Email
                     <input
-                      type="email"
-                      name="email"
+                      name="client_email"
                       id="email"
                       required
-                      onChange={(e) => {
-                        setFormData((prevValues) => ({
-                          ...prevValues,
-                          client_email: e.target.value.trim(),
-                        }));
-                      }}
+                      onChange={(e) => handleChange(e, meta)}
                     />
                   </label>
-
+                  <span className="modal-form-field_error">
+                    {meta.errors.client_email && meta.touched.client_email
+                      ? meta.errors.client_email
+                      : ""}
+                  </span>
                   <label>
                     Type of Service
                     <select
-                      name="type_of_service"
+                      name="client_requirement"
                       id="type_of_service"
-                      onChange={(e) => {
-                        setFormData((prevValues) => ({
-                          ...prevValues,
-                          client_requirement: e.target.value.trim(),
-                        }));
-                      }}
+                      onChange={(e) => handleChange(e, meta)}
                     >
-                      <option value="Web Design">Web Design</option>
-                      <option value="Web Development">Web Development</option>
-                      <option value="Graphic Design">Graphic Design</option>
-                      <option value="SEO">SEO</option>
+                      {Options.map((item) => (
+                        <option value={item}>{item}</option>
+                      ))}
                     </select>
                   </label>
+                  <span className="modal-form-field_error">
+                    {meta.errors.client_requirement &&
+                    meta.touched.client_requirement
+                      ? meta.errors.client_requirement
+                      : ""}
+                  </span>
                   <div className="modal-form-buttons">
                     <button type="submit">Submit</button>
-                    <button type="button">Clear</button>
+                    <button type="button" onClick={hanldeClear}>
+                      Clear
+                    </button>
                     <button type="button">Cancel</button>
                   </div>
                 </Form>
