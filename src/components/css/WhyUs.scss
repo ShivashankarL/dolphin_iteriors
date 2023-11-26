@@ -1,0 +1,70 @@
+@import "./fonts";
+.whyus {
+  height: 280px;
+  background: #718096;
+  &__main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2d3748;
+    @media screen and (min-width: 730px) {
+      padding: 50px;
+      width: 600px;
+      height: 50px;
+    }
+    @media screen and (max-width: 730px) {
+      padding: 30px;
+      width: 350px;
+      height: 60px;
+    }
+    @media screen and (max-width: 420px) {
+      width: 250px;
+      height: 60px;
+    }
+    @media screen and (max-width: 320px) {
+      width: 200px;
+      height: 60px;
+    }
+    border-radius: 20px;
+    &--line {
+      height: 100px;
+      border: 2px solid skyblue;
+      color: aqua;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: 730px) {
+        font-size: 18px;
+        padding: 20px;
+      }
+      @media screen and (max-width: 730px) {
+        font-size: 13px;
+        padding: 10px;
+      }
+      @media screen and (max-width: 420px) {
+        font-size: 10px;
+        padding: 5px;
+      }
+
+      font-family: $dolphin-font-family;
+      text-align: center;
+      color: white;
+
+      span {
+        color: skyblue;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

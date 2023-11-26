@@ -12,6 +12,7 @@ import {
 } from "firebase/firestore";
 import { Form, Formik, FormikProps } from "formik";
 import { GetAQuoteValidationSchema } from "../utils/validationSchemas/getQuote";
+import Close from "../images/close.svg.svg";
 
 interface ObjectTypes {
   [key: string]: string;
@@ -38,7 +39,12 @@ const Options = [
   "Aluminium Doors & Window Solutions",
   "Poultry Farms & Hatchery",
 ];
-const BookMeeting = () => {
+
+interface Props {
+  setModalFlag: React.Dispatch<React.SetStateAction<boolean>>;
+  isModal: boolean;
+}
+const BookMeeting = ({ setModalFlag, isModal }: Props) => {
   const get_quote_collection = collection(db, "get_quote");
   const [quote_exists, setquote_exists] = useState(false);
 
@@ -81,6 +87,7 @@ const BookMeeting = () => {
         alert(
           "Your quote has been received. You will receive a call from our correspondent soon"
         );
+        hanldeClear();
       }
     } catch (e) {
       console.log(e);
@@ -96,9 +103,21 @@ const BookMeeting = () => {
   };
   return (
     <>
+      {isModal ? (
+        <div className="row close-tag">
+          <span
+            className="close-tag-css material-symbols-outlined"
+            onClick={() => {
+              setModalFlag(false);
+            }}
+          >
+            close
+          </span>
+        </div>
+      ) : null}
       <div className="modal">
         <div className="modal-header">
-          <h4 className="modal-title">Contact Us</h4>
+          <h4 className="modal__title">Contact Us</h4>
         </div>
         <div className="modal-body">
           <Formik
@@ -128,7 +147,7 @@ const BookMeeting = () => {
                   <label>
                     Phone Number
                     <input
-                      type="tel"
+                      type="number"
                       name="client_phone"
                       id="phone"
                       required

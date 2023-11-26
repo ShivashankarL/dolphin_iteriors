@@ -1,0 +1,8 @@
+@import "./_fonts.scss";
+
+.footer {
+  display: flex;
+  &__contact-us--head {
+    font-family: $dolphin-font-family;
+  }
+}

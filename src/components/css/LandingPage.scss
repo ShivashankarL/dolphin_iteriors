@@ -1,5 +1,11 @@
 .landing_page {
-  height: calc(100% - 80px);
+  @media screen and (min-width: 956px) {
+    height: calc(100% - 80px);
+  }
+  @media only screen and (max-width: 955px) {
+    flex-direction: column;
+    width: 100%;
+  }
   overflow: auto;
   background-size: cover;
   background-color: #edfdfd;
@@ -81,6 +87,9 @@
     backdrop-filter: blur(16.133333206176758px);
     ul {
       margin-top: 3px;
+      @media only screen and (max-width: 1275px) {
+        font-size: 14px;
+      }
       @media only screen and (max-width: 456px) {
         font-size: 13px;
       }
@@ -97,6 +106,9 @@
 
 .head_title {
   color: var(--gray-800, #1a202c);
+  @media only screen and (max-width: 1275px) {
+    font-size: 20px;
+  }
   @media only screen and (max-width: 456px) {
     font-size: 20px;
   }
@@ -118,15 +130,7 @@
   font-weight: 300;
   /* color: white; */
 }
-.landing_page:after {
-  content: "";
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-}
+
 .landing_page > img {
   margin: 25px;
 }

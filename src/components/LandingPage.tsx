@@ -8,6 +8,8 @@ import ComingSoon from "./ComingSoon";
 import Modal from "react-modal";
 import BookMeeting from "./BookMeeting";
 import { BookModalStyle } from "./css/ModalStyles";
+import WhyUs from "./WhyUs";
+import Footer from "./Footer";
 const LandingPage = () => {
   const [bookMeetingModal, setBookMeetingModal] = useState(false);
   return (
@@ -50,14 +52,15 @@ const LandingPage = () => {
       {/* <ComingSoon /> */}
 
       <Modal
-        shouldCloseOnOverlayClick={true}
         isOpen={bookMeetingModal}
         style={BookModalStyle}
         ariaHideApp={false}
-        onRequestClose={() => setBookMeetingModal(!bookMeetingModal)}
       >
-        <BookMeeting />
+        <BookMeeting setModalFlag={setBookMeetingModal} isModal={true} />
       </Modal>
+      <WhyUs />
+      {/* <BookMeeting setModalFlag={setBookMeetingModal} isModal={false} /> */}
+      <Footer />
     </>
   );
 };
