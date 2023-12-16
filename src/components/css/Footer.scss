@@ -2,7 +2,130 @@
 
 .footer {
   display: flex;
-  &__contact-us--head {
+  padding: 50px;
+  background: #2d3748;
+  color: white;
+  &__contact-us {
+    display: flex;
+    flex-direction: column;
     font-family: $dolphin-font-family;
+    padding-right: 100px;
+    @media screen and (max-width: 1450px) {
+      display: none;
+    }
+    &--head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &--line {
+        width: 70px;
+        height: 3px;
+        background-color: skyblue;
+        border-radius: 10px;
+      }
+    }
+    &--phone,
+    &--email {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+    }
+    &--border-span {
+      height: 200px;
+      background: skyblue;
+      width: 5px;
+      border-radius: 10px;
+      @media screen and (max-width: 1450px) {
+        display: none;
+      }
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    font-family: $dolphin-font-family;
+
+    width: 550px;
+    @media screen and (min-width: 1450px) {
+      padding-right: 100px;
+      padding-left: 100px;
+    }
+    @media screen and (max-width: 1450px) {
+      font-size: 15px;
+    }
+    @media screen and (max-width: 390px) {
+      font-size: 12px;
+    }
+    &--head {
+      @extend .footer__contact-us--head;
+      &--line {
+        @extend .footer__contact-us--head--line;
+      }
+    }
+    &--body {
+      @media screen and (min-width: 1450px) {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+      }
+      @media screen and (max-width: 1450px) {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      &--phno-email {
+        @media screen and (min-width: 1450px) {
+          display: none;
+        }
+        @media screen and (max-width: 1450px) {
+          margin-top: 10px;
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__followus {
+    display: flex;
+    flex-direction: column;
+    font-family: $dolphin-font-family;
+    padding-right: 100px;
+    padding-left: 100px;
+    width: 550px;
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+    &--head {
+      @extend .footer__contact-us--head;
+      &--line {
+        @extend .footer__contact-us--head--line;
+      }
+    }
+    &--body {
+      @extend .footer__contact-us--phone;
+      display: grid;
+      grid-template-columns: 0.5fr 0.5fr 0.5fr;
+      justify-content: center;
+      &--img_label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          @extend .footer__contact-us--phone;
+          height: 50px;
+        }
+        span {
+          text-align: center;
+        }
+        &:hover span {
+          border-bottom: 3px solid skyblue;
+          border-radius: 5%;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }

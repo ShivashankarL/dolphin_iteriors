@@ -47,7 +47,31 @@ interface Props {
 const BookMeeting = ({ setModalFlag, isModal }: Props) => {
   const get_quote_collection = collection(db, "get_quote");
   const [quote_exists, setquote_exists] = useState(false);
+  const INPUT = "INPUT";
+  const SELECT = "SELECT";
+  const BUTTON = "BUTTON";
+  const handleFormEvent = (event: any) => {
+    if (event.keyCode === 13) {
+      const form = event.target.form;
+      const index = Array.prototype.indexOf.call(form, event.target);
 
+      const elementNotDisabled = Object.entries(form.elements).filter(
+        (x: any) =>
+          x[1].disabled !== true &&
+          (x[1].tagName === INPUT ||
+            x[1].tagName === SELECT ||
+            x[1].tagName === BUTTON)
+      );
+      if (form.elements[index + 1].disabled) {
+        const nextNotDisabledElement = elementNotDisabled.find(
+          (x: any) => x[0] > index + 1
+        );
+        form.elements[
+          nextNotDisabledElement ? nextNotDisabledElement[0] : 0
+        ].focus();
+      }
+    }
+  };
   const [formData, setFormData] = useState<getQuoteFormDataType>({
     client_email: "",
     client_name: "",
@@ -136,6 +160,17 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                       name="client_name"
                       id="name"
                       required
+                      onKeyDown={(e) => {
+                        console.log(e.key);
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          (
+                            document.getElementsByName(
+                              "client_phone"
+                            )[0] as HTMLInputElement
+                          ).focus();
+                        }
+                      }}
                       onChange={(e) => handleChange(e, meta)}
                     />
                   </label>
@@ -151,6 +186,17 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                       name="client_phone"
                       id="phone"
                       required
+                      onKeyDown={(e) => {
+                        console.log(e.key);
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          (
+                            document.getElementsByName(
+                              "client_email"
+                            )[0] as HTMLInputElement
+                          ).focus();
+                        }
+                      }}
                       onChange={(e) => handleChange(e, meta)}
                     />
                   </label>
@@ -165,6 +211,17 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                       name="client_email"
                       id="email"
                       required
+                      onKeyDown={(e) => {
+                        console.log(e.key);
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          (
+                            document.getElementsByName(
+                              "client_requirement"
+                            )[0] as HTMLInputElement
+                          ).focus();
+                        }
+                      }}
                       onChange={(e) => handleChange(e, meta)}
                     />
                   </label>
@@ -178,6 +235,17 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                     <select
                       name="client_requirement"
                       id="type_of_service"
+                      onKeyDown={(e) => {
+                        console.log(e.key);
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          (
+                            document.getElementsByName(
+                              "sub"
+                            )[0] as HTMLButtonElement
+                          ).focus();
+                        }
+                      }}
                       onChange={(e) => handleChange(e, meta)}
                     >
                       {Options.map((item) => (
@@ -192,7 +260,9 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                       : ""}
                   </span>
                   <div className="modal-form-buttons">
-                    <button type="submit">Submit</button>
+                    <button type="submit" name="sub">
+                      Submit
+                    </button>
                     <button type="button" onClick={hanldeClear}>
                       Clear
                     </button>
