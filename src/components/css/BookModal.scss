@@ -42,6 +42,21 @@
     margin-top: 5px;
     padding: 10px 10px 10px 10px;
   }
+  &-buttons {
+    margin-top: 5px;
+    button {
+      background-color: #046bc1;
+      border: 0;
+      border-radius: 10px;
+      color: white;
+      padding: 5px;
+      font-family: "Poppins", sans-serif;
+      outline: none;
+      font-weight: bolder;
+      height: 50px;
+      cursor: pointer;
+    }
+  }
   #type_of_service {
     width: 100%;
     @media screen and (min-width: 900px) {

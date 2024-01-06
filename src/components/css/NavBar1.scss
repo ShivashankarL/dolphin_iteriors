@@ -9,18 +9,7 @@
     z-index: 2;
     nav {
       display: grid;
-      @media only screen and (max-width: 600px) {
-        grid-template-columns: 4.3fr 3fr;
-        // display: none;
-      }
-      @media only screen and (min-width: 601px) {
-        grid-template-columns: 0.3fr 4fr 0.1fr;
-        // display: none;
-      }
-      @media only screen and (min-width: 721px) {
-        grid-template-columns: 0.3fr 4fr 6fr;
-        // display: none;
-      }
+      grid-template-columns: 0.4fr 6fr;
       align-items: center;
       height: 80px;
       .menu-toggle {
@@ -74,10 +63,6 @@
       .logo-title {
         color: #000;
         font-size: 1rem;
-
-        @media only screen and (max-width: 648px) {
-          display: none;
-        }
 
         // @media screen and (min-width: 934px) {
         //   font-size: 1.5rem;
@@ -177,7 +162,6 @@
 @media only screen and (max-width: 720px) {
   /* MOBILE HEADINGS */
   .features {
-    flex-direction: column;
     padding: 50px;
   }
 

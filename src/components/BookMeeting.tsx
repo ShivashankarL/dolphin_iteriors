@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./css/BookModal.scss";
 import { db } from "../firebase/firebaseconfig";
 import {
-  QuerySnapshot,
+  DocumentData,
   addDoc,
   collection,
-  getDoc,
   getDocs,
   query,
   where,
 } from "firebase/firestore";
 import { Form, Formik, FormikProps } from "formik";
 import { GetAQuoteValidationSchema } from "../utils/validationSchemas/getQuote";
-import Close from "../images/close.svg.svg";
 
 interface ObjectTypes {
   [key: string]: string;
@@ -46,52 +44,13 @@ interface Props {
 }
 const BookMeeting = ({ setModalFlag, isModal }: Props) => {
   const get_quote_collection = collection(db, "get_quote");
-  const [quote_exists, setquote_exists] = useState(false);
-  const INPUT = "INPUT";
-  const SELECT = "SELECT";
-  const BUTTON = "BUTTON";
-  const handleFormEvent = (event: any) => {
-    if (event.keyCode === 13) {
-      const form = event.target.form;
-      const index = Array.prototype.indexOf.call(form, event.target);
-
-      const elementNotDisabled = Object.entries(form.elements).filter(
-        (x: any) =>
-          x[1].disabled !== true &&
-          (x[1].tagName === INPUT ||
-            x[1].tagName === SELECT ||
-            x[1].tagName === BUTTON)
-      );
-      if (form.elements[index + 1].disabled) {
-        const nextNotDisabledElement = elementNotDisabled.find(
-          (x: any) => x[0] > index + 1
-        );
-        form.elements[
-          nextNotDisabledElement ? nextNotDisabledElement[0] : 0
-        ].focus();
-      }
-    }
-  };
   const [formData, setFormData] = useState<getQuoteFormDataType>({
     client_email: "",
     client_name: "",
     client_phone: "",
-    client_requirement: "",
+    client_requirement: "Interior Works",
   });
-  useEffect(() => {
-    const query_quote_exists = query(
-      get_quote_collection,
-      where("client_email", "==", formData.client_email),
-      where("client_phone", "==", formData.client_phone)
-    );
-    getDocs(query_quote_exists)
-      .then((result) => {
-        if (!result) {
-          setquote_exists(true);
-        }
-      })
-      .catch((err) => console.log(err));
-  }, []);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
     meta: FormikProps<getQuoteFormDataType>
@@ -104,6 +63,24 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
   };
   const addQuote = async () => {
     try {
+      const query_quote_exists = query(
+        get_quote_collection,
+        where("client_email", "==", formData.client_email),
+        where("client_phone", "==", formData.client_phone)
+      );
+      const querySnapshort = await getDocs(query_quote_exists);
+      let queries: DocumentData = [];
+      querySnapshort.forEach((doc) => {
+        queries.push(doc.data());
+      });
+
+      if (queries.length > 0) {
+        alert(
+          "The quote already exists; please await further instructions or clarification from our team. Thank you for your patience."
+        );
+
+        return;
+      }
       const response = await addDoc(get_quote_collection, {
         ...formData,
       });
@@ -149,8 +126,11 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
             onSubmit={addQuote}
             validationSchema={GetAQuoteValidationSchema}
             enableReinitialize
+            validateOnChange
           >
             {(meta) => {
+              console.log(meta.values, meta.errors);
+
               return (
                 <Form className="modal-form">
                   <label>
@@ -159,6 +139,7 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                       type="text"
                       name="client_name"
                       id="name"
+                      value={formData.client_name}
                       required
                       onKeyDown={(e) => {
                         console.log(e.key);
@@ -175,9 +156,7 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                     />
                   </label>
                   <span className="field_error">
-                    {meta.errors.client_name && meta.touched.client_name
-                      ? meta.errors.client_name
-                      : ""}
+                    {meta.errors.client_name ? meta.errors.client_name : ""}
                   </span>
                   <label>
                     Phone Number
@@ -186,6 +165,7 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                       name="client_phone"
                       id="phone"
                       required
+                      value={formData.client_phone}
                       onKeyDown={(e) => {
                         console.log(e.key);
                         if (e.key === "Enter") {
@@ -201,9 +181,7 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                     />
                   </label>
                   <span className="modal-form-field_error">
-                    {meta.errors.client_phone && meta.touched.client_phone
-                      ? meta.errors.client_phone
-                      : ""}
+                    {meta.errors.client_phone ? meta.errors.client_phone : ""}
                   </span>
                   <label>
                     Email
@@ -211,8 +189,8 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                       name="client_email"
                       id="email"
                       required
+                      value={formData.client_email}
                       onKeyDown={(e) => {
-                        console.log(e.key);
                         if (e.key === "Enter") {
                           e.preventDefault();
                           (
@@ -226,15 +204,14 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                     />
                   </label>
                   <span className="modal-form-field_error">
-                    {meta.errors.client_email && meta.touched.client_email
-                      ? meta.errors.client_email
-                      : ""}
+                    {meta.errors.client_email ? meta.errors.client_email : ""}
                   </span>
                   <label>
                     Type of Service
                     <select
                       name="client_requirement"
                       id="type_of_service"
+                      value={formData.client_email}
                       onKeyDown={(e) => {
                         console.log(e.key);
                         if (e.key === "Enter") {
@@ -254,8 +231,7 @@ const BookMeeting = ({ setModalFlag, isModal }: Props) => {
                     </select>
                   </label>
                   <span className="modal-form-field_error">
-                    {meta.errors.client_requirement &&
-                    meta.touched.client_requirement
+                    {meta.errors.client_requirement
                       ? meta.errors.client_requirement
                       : ""}
                   </span>

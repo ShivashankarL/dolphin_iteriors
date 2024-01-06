@@ -43,7 +43,7 @@ const NavBar: React.FC<Props> = ({ children }) => {
           <nav className="navbar-nav">
             <img src={Logo} alt="Company Logo" className="navbar-logo-img" />
             <div className="logo-title">Dolphin Dream Infra Projects</div>
-            <div
+            {/* <div
               className="menu-toggle"
               id="mobile-menu"
               onClick={toggleClassName}
@@ -51,8 +51,8 @@ const NavBar: React.FC<Props> = ({ children }) => {
               <span className="bar"></span>
               <span className="bar"></span>
               <span className="bar"></span>
-            </div>
-            <ul className={`${class_name.nav} no-search`}>
+            </div> */}
+            {/* <ul className={`${class_name.nav} no-search`}>
               <li className="nav-item">
                 <span className="material-symbols-outlined">home</span>
                 <Link to="/">Home</Link>
@@ -67,7 +67,7 @@ const NavBar: React.FC<Props> = ({ children }) => {
                 <span className="material-symbols-outlined">contacts</span>
                 <a href="#">Contact Us</a>
               </li>
-            </ul>
+            </ul> */}
           </nav>
         </div>
       </div>
