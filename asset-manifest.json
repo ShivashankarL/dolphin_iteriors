@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dolphin_iteriors/static/css/main.544d7a5f.css",
-    "main.js": "/dolphin_iteriors/static/js/main.59a6407e.js",
+    "main.js": "/dolphin_iteriors/static/js/main.30b8ecda.js",
     "static/media/kitchen_cat.jpg": "/dolphin_iteriors/static/media/kitchen_cat.5b2bbf6aeb64cae91c6c.jpg",
     "static/media/livingarea_cat.jpg": "/dolphin_iteriors/static/media/livingarea_cat.76df0013a11664802dcd.jpg",
     "static/media/landing.jpg": "/dolphin_iteriors/static/media/landing.7040b63fbaa1224aba21.jpg",
@@ -11,10 +11,10 @@
     "static/media/faceboook.svg": "/dolphin_iteriors/static/media/faceboook.550a4635d3d5a3f64b7e42f519b6eddc.svg",
     "static/media/gmail.svg": "/dolphin_iteriors/static/media/gmail.c40402e610ddd74b898679ecd5aca615.svg",
     "main.544d7a5f.css.map": "/dolphin_iteriors/static/css/main.544d7a5f.css.map",
-    "main.59a6407e.js.map": "/dolphin_iteriors/static/js/main.59a6407e.js.map"
+    "main.30b8ecda.js.map": "/dolphin_iteriors/static/js/main.30b8ecda.js.map"
   },
   "entrypoints": [
     "static/css/main.544d7a5f.css",
-    "static/js/main.59a6407e.js"
+    "static/js/main.30b8ecda.js"
   ]
 }
