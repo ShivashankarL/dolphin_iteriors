@@ -14,11 +14,11 @@ const Footer = () => {
         </div>
         <div className="footer__contact-us--phone">
           <span className="material-symbols-outlined">call</span> &nbsp;
-          8956894565
+          <span>8956894565</span>
         </div>
         <div className="footer__contact-us--email">
-          <span className="material-symbols-outlined">mail</span> &nbsp; &nbsp;
-          dolphininterior@gmail.com
+          <span className="material-symbols-outlined">mail</span> &nbsp;
+          <span>dolphininterior@gmail.com</span>
         </div>
       </div>
       <span className="footer__contact-us--border-span"></span>
