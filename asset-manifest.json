@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/dolphin_iteriors/static/css/main.7cc692e8.css",
-    "main.js": "/dolphin_iteriors/static/js/main.2df0ee14.js",
+    "main.css": "/dolphin_iteriors/static/css/main.e4e5d5d3.css",
+    "main.js": "/dolphin_iteriors/static/js/main.d5978105.js",
     "static/media/kitchen_cat.jpg": "/dolphin_iteriors/static/media/kitchen_cat.5b2bbf6aeb64cae91c6c.jpg",
     "static/media/livingarea_cat.jpg": "/dolphin_iteriors/static/media/livingarea_cat.76df0013a11664802dcd.jpg",
     "static/media/landing.jpg": "/dolphin_iteriors/static/media/landing.7040b63fbaa1224aba21.jpg",
     "static/media/instagram.svg": "/dolphin_iteriors/static/media/instagram.0b2f6643224670fa9a97c379e54b08b8.svg",
-    "static/media/logo.svg": "/dolphin_iteriors/static/media/logo.483c473ab4d3c39df4b03ff35baf5ccb.svg",
+    "static/media/logo.svg": "/dolphin_iteriors/static/media/logo.6107ef38e5b310122c73842eeb4c0cb6.svg",
     "index.html": "/dolphin_iteriors/index.html",
     "static/media/faceboook.svg": "/dolphin_iteriors/static/media/faceboook.550a4635d3d5a3f64b7e42f519b6eddc.svg",
     "static/media/gmail.svg": "/dolphin_iteriors/static/media/gmail.c40402e610ddd74b898679ecd5aca615.svg",
-    "main.7cc692e8.css.map": "/dolphin_iteriors/static/css/main.7cc692e8.css.map",
-    "main.2df0ee14.js.map": "/dolphin_iteriors/static/js/main.2df0ee14.js.map"
+    "main.e4e5d5d3.css.map": "/dolphin_iteriors/static/css/main.e4e5d5d3.css.map",
+    "main.d5978105.js.map": "/dolphin_iteriors/static/js/main.d5978105.js.map"
   },
   "entrypoints": [
-    "static/css/main.7cc692e8.css",
-    "static/js/main.2df0ee14.js"
+    "static/css/main.e4e5d5d3.css",
+    "static/js/main.d5978105.js"
   ]
 }
