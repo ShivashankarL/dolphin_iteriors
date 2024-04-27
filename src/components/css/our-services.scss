@@ -1,0 +1,11 @@
+@import "./fonts";
+
+.our-services {
+  padding: 20px 20px 20px 20px;
+  background: #2d3748;
+  font-family: $dolphin-font-family;
+  color: white;
+  &__list--item {
+    margin-bottom: 10px;
+  }
+}

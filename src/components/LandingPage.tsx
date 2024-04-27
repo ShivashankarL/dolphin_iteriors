@@ -10,6 +10,7 @@ import BookMeeting from "./BookMeeting";
 import { BookModalStyle } from "./css/ModalStyles";
 import WhyUs from "./WhyUs";
 import Footer from "./Footer";
+import OurServices from "./OurServices";
 const LandingPage = () => {
   const [bookMeetingModal, setBookMeetingModal] = useState(false);
   return (
@@ -50,7 +51,7 @@ const LandingPage = () => {
         </div>
       </div>
       {/* <ComingSoon /> */}
-
+      <OurServices />
       <Modal
         isOpen={bookMeetingModal}
         style={BookModalStyle}

@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "-": "^0.0.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
@@ -29,12 +30,17 @@
     "react-scripts": "5.0.1",
     "react-whatsapp": "^0.3.0",
     "sass": "^1.63.6",
+    "save-dev": "^0.0.1-security",
     "styled-components": "^5.3.9",
     "typescript": "^5.0.4",
     "web-vitals": "^2.1.4",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.3",
     "yup": "^1.1.1"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
